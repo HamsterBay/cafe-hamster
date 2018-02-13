@@ -4,7 +4,7 @@
 
   function DataBase() {
     this.data = {};
-  };
+  }
 
   DataBase.prototype.add = function(key, value) {
     this.data[key] = value;
