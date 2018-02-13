@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Café Hamster</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" />
-  </head>
-  <body class="container">
-    <header>
-      <h1>Hamster Cafe</h1>
-    </header>
-    <section>
-      <div class="panel panel-default">
-        <div class="panel-body">
+
+<head>
+  <meta charset="utf-8">
+  <title>Café Hamster</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" />
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body class="container">
+  <header>
+    <h1>Hamster <kbd class="bg-danger">Café</kbd></h1>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
         <form data-order="formular">
           <div class="form-group">
-            <label for="coffeeOrder">Order:</label>
+            <label for="coffeeOrder"><b>Order:</b></label>
             <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
           </div>
           <div class="form-group">
-            <label for="putEmail">E-mail address:</label>
-            <input class="form-control" type="email" name="emailAddress" id="putEmail" value="" placeholder="hamster@coffee.com">
+            <label for="putEmail"><b>E-mail address:</b></label>
+            <input class="form-control" type="email" name="emailAddress" id="putEmail" value="" placeholder="e.g. hamster@coffee.com">
           </div>
+          <div><br><b>Cofee size</b></div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="espresso">
+              Espresso
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="size" value="medium" checked>
+            Medium
+          </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input type="radio" name="size" value="large">
+            Large
+          </label>
+          </div>
+          <div class="form-group">
+            <label for="coffeeTaste"><br><b>Coffee taste</b></label>
+            <select id="coffeeTaste" class="form-control" name="taste">
+                <option value="" selected>Are you crazy? I prefer pure coffee</option>
+                <option value="caramel">with caramel syroup</option>
+                <option value="vanilla">with vanilla extract</option>
+                <option value="gingerbread">with gingerbread spices</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="caffeineLevel"><br><b>Caffeine level</b></label><br>
+            <input name="level" id="caffeineLevel" type="range" value="30">
+          </div>
+          <button type="submit" class="btn btn-primary">Order</button>
+          <button type="reset" class="btn btn-info">Resign</button>
         </form>
       </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
   <script src="scripts/database.js" charset="utf-8"></script>
   <script src="scripts/barista.js" charset="utf-8"></script>
   <script src="scripts/main.js" charset="utf-8"></script>
 
-  </body>
+</body>
+
 </html>
