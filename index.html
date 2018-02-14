@@ -42,11 +42,16 @@
             <input type="radio" name="size" value="large">
             Large
           </label>
+          <div class="radio">
+            <label>
+            <input type="radio" name="size" value="xlarge">
+            X-Large
+          </label>
           </div>
           <div class="form-group">
             <label for="coffeeTaste"><br><b>Coffee taste</b></label>
             <select id="coffeeTaste" class="form-control" name="taste">
-                <option value="" selected>Are you crazy? I prefer pure coffee</option>
+                <option value="" selected>Are you crazy? I prefer pure coffee!</option>
                 <option value="caramel">with caramel syroup</option>
                 <option value="vanilla">with vanilla extract</option>
                 <option value="gingerbread">with gingerbread spices</option>
@@ -56,7 +61,7 @@
             <label for="caffeineLevel"><br><b>Caffeine level</b></label><br>
             <input name="level" id="caffeineLevel" type="range" value="30">
           </div>
-          <button type="submit" class="btn btn-primary">Order</button>
+          <button type="submit" class="btn btn-danger">Order</button>
           <button type="reset" class="btn btn-info">Resign</button>
         </form>
       </div>
