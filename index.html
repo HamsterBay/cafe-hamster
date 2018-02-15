@@ -6,6 +6,7 @@
   <title>Café Hamster</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" />
   <link rel="stylesheet" href="style/style.css" />
+  <link rel="stylesheet" href="style/form.css" />
 </head>
 
 <body class="container">
@@ -18,11 +19,11 @@
         <form data-order="formular">
           <div class="form-group">
             <label for="coffeeOrder"><b>Order:</b></label>
-            <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+            <input class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+">
           </div>
           <div class="form-group">
             <label for="putEmail"><b>E-mail address:</b></label>
-            <input class="form-control" type="email" name="emailAddress" id="putEmail" value="" placeholder="e.g. hamster@coffee.com">
+            <input class="form-control" type="email" name="emailAddress" id="putEmail" value="" placeholder="e.g. hamster@coffee.com" required>
           </div>
           <div><br><b>Cofee size</b></div>
           <div class="radio">
@@ -42,7 +43,7 @@
             <input type="radio" name="size" value="large">
             Large
           </label>
-        </div>
+          </div>
           <div class="radio">
             <label>
             <input type="radio" name="size" value="xlarge">
@@ -52,7 +53,7 @@
           <div class="form-group">
             <label for="coffeeTaste"><br><b>Coffee taste</b></label>
             <select id="coffeeTaste" class="form-control" name="taste">
-                <option value="" selected>Are you crazy? I prefer pure coffee!</option>
+                <option value="pure" selected>Are you crazy? I prefer pure coffee!</option>
                 <option value="caramel">with caramel syroup</option>
                 <option value="vanilla">with vanilla extract</option>
                 <option value="gingerbread">with gingerbread spices</option>
@@ -61,16 +62,26 @@
           <div class="form-group">
             <label for="caffeineLevel"><br><b>Caffeine level     </b></label>
             <label id="caffeineLabel" style="color: orange"></label><br>
-            <input name="level" id="caffeineLevel" type="range" step="1" min="1" max="10" value="5">
+            <input name="level" id="caffeineLevel" type="range" step="1" min="0" max="10" value="5">
           </div>
           <button type="submit" class="btn btn-danger">Order</button>
           <button type="reset" class="btn btn-info">Resign</button>
         </form>
       </div>
     </div>
+    <br><br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Waiting orders:</h4>
+        <div data-order="ordersList">
+        </div>
+      </div>
+    </div>
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
+  <script src="scripts/orderslist.js" charset="utf-8"></script>
   <script src="scripts/range.js" charset="utf-8"></script>
   <script src="scripts/order.js" charset="utf-8"></script>
   <script src="scripts/database.js" charset="utf-8"></script>

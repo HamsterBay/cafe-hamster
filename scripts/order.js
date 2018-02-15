@@ -29,6 +29,20 @@
     });
   };
 
+  ToOrder.prototype.addKeyInputHandler = function(fn) {
+    console.log('Create Key Input Handler');
+    this.$formElement.on('input', '[name=emailAddress]', function(event) {
+      var emailAddress = event.target.value;
+      //console.log(fn(emailAddress));
+      var info = '';
+      if(fn(emailAddress)) {
+        event.target.setCustomValidity('');
+      } else {
+        info = 'Email address: ' + emailAddress + ' is not allowed!'
+        event.target.setCustomValidity(info);
+      }
+    });
+  };
 
   Application.ToOrder = ToOrder;
   window.Application = Application;
