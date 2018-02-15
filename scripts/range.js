@@ -2,7 +2,8 @@
   'use-strict';
   var Application = window.Application || {};
   var rangeValues = {
-    "1": "1 ... good for babies! Totally decaffeinated",
+    "0": "0 ... good for babies! Totally decaffeinated",
+    "1": "1 ... ? Why so shy?!",
     "2": "2 ... it's good that you are faintly trying!",
     "3": "3 ... it's almost a real coffee!",
     "4": "4 ... it's good for a lunch break",
@@ -24,7 +25,7 @@
 
       // change label text color directly with HTML
       if ([$('#caffeineLevel').val()] < 4) {
-        document.getElementById('caffeineLabel').style.color = 'green';
+        document.getElementById('caffeineLabel').style.color = 'teal';
       } else if ([$('#caffeineLevel').val()] > 3 && [$('#caffeineLevel').val()] < 8) {
         document.getElementById('caffeineLabel').style.color = 'orange';      } else {
         document.getElementById('caffeineLabel').style.color = 'red';

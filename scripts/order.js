@@ -5,11 +5,11 @@
 
   function ToOrder(selector) {
     if(!selector) {
-      throw new Error('No selector');
+      throw new Error('There is no selector');
     }
     this.$formElement = $(selector);
     if(this.$formElement === 0) {
-      throw new Error('No proper elements: ' + selector);
+      throw new Error('No proper elements for sleector: ' + selector);
     }
   }
 
