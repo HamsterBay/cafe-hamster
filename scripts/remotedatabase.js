@@ -11,27 +11,31 @@
   }
 
   RemoteDataBase.prototype.add = function(key, value) {
-    $.post(this.urlPath, value, function(serverResponse) {
+    return $.post(this.urlPath, value, function(serverResponse) {
       console.log(serverResponse);
     });
   };
 
   RemoteDataBase.prototype.readAll = function(fnsr) {
-    $.get(this.urlPath, function(serverResponse) {
-      console.log(serverResponse);
-      fnsr(serverResponse);
+    return $.get(this.urlPath, function(serverResponse) {
+      if (fnsr) {
+        console.log(serverResponse);
+        fnsr(serverResponse);
+      }
     });
   };
 
   RemoteDataBase.prototype.read = function(key, fnsr) {
-    $.get(this.urlPath + '/' + key, function(serverResponse) {
-      console.log(serverResponse);
-      fnsr(serverResponse);
+    return $.get(this.urlPath + '/' + key, function(serverResponse) {
+      if (fnsr) {
+        console.log(serverResponse);
+        fnsr(serverResponse);
+      }
     });
   };
 
   RemoteDataBase.prototype.delete = function(key) {
-    $.ajax(this.urlPath + '/' + key, {
+    return $.ajax(this.urlPath + '/' + key, {
       type: 'DELETE'
     });
   };
